@@ -11,9 +11,6 @@ namespace DevPratico
 
             var path = Path.Combine(Directory.GetCurrentDirectory(), "\\Baseficticia.txt");
 
-            var dir = Directory.GetCurrentDirectory();
-
-
             var dataTable = Handler.FileToDataTable(path);
 
             //-Remova todos os registros com CEP Inválido(aplicar regras);
