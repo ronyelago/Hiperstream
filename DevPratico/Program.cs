@@ -34,11 +34,7 @@ namespace DevPratico
 
             StringBuilder zeroeds = new StringBuilder();
 
-            zeroeds.Append("NomeCliente;");
-            zeroeds.Append("EnderecoCompleto;");
-            zeroeds.Append("ValorFatura;");
-            zeroeds.Append("NumeroPaginas;");
-
+            zeroeds = Formatter.HeaderCreator();
             zeroeds.AppendLine();
 
             foreach (DataRow dr in dataTable.Rows)
@@ -74,10 +70,7 @@ namespace DevPratico
 
             StringBuilder sixPages = new StringBuilder();
 
-            sixPages.Append("NomeCliente;");
-            sixPages.Append("EnderecoCompleto;");
-            sixPages.Append("ValorFatura;");
-            sixPages.Append("NumeroPaginas;");
+            sixPages = Formatter.HeaderCreator();
             sixPages.AppendLine();
 
             for (int i = 0; i < dataTable.Rows.Count; i++)
