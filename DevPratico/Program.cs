@@ -8,20 +8,24 @@ namespace DevPratico
     {
         static void Main(string[] args)
         {
-
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "\\Baseficticia.txt");
+            var path = Path.Combine(System.AppDomain.CurrentDomain.BaseDirectory.ToString(), "Baseficticia.txt");
 
             var dataTable = Handler.FileToDataTable(path);
 
             //-Remova todos os registros com CEP Inválido(aplicar regras);
+            int index = 0;
+
             for (int i = 0; i < dataTable.Rows.Count; i++)
             {
-                var dr = dataTable.Rows[i];
+                var dr = dataTable.Rows[index];
 
                 if (!Handler.CepValidate(dr["CEP"].ToString()))
                 {
                     dr.Delete();
+                    index -= 1;
                 }
+
+                index++;
             }
 
             dataTable.AcceptChanges();

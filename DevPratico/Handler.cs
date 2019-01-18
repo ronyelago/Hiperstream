@@ -59,7 +59,7 @@ namespace DevPratico
         {
             cep = cep.Trim();
 
-            if (string.IsNullOrEmpty(cep) || cep.Length > 8 || Regex.IsMatch(cep, (@"^(\d)\1*$")))
+            if (string.IsNullOrEmpty(cep) || cep.Length != 8 || Regex.IsMatch(cep, (@"^.*(?:(\d)\1{7})$")))
             {
                 return false;
             }
