@@ -1,11 +1,10 @@
-﻿using System.Text.RegularExpressions;
+﻿using System.Text;
+using System.Text.RegularExpressions;
 
 namespace DevPratico
 {
     public static class AddressHandler
     {
-
-
         //Validacao de cep 
         //Regras => 8 digitos, numeros nao podem ser todos repetidos
         //e nao pode ser null nem vazio
