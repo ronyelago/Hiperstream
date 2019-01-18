@@ -44,14 +44,7 @@ namespace DevPratico
                     //
                     zeroeds.Append(dr[0].ToString() + "; ");
 
-                    StringBuilder address = new StringBuilder();
-                    address.Append(dr[1].ToString());
-                    address.Append(dr[2].ToString() + " ");
-                    address.Append(dr[3].ToString() + " ");
-                    address.Append(dr[4].ToString() + " ");
-                    address.Append(dr[5].ToString() + "; ");
-
-                    zeroeds.Append(address);
+                    zeroeds.Append(Formatter.AddressContac(dr));
                     zeroeds.Append(dr[6].ToString() + "; ");
                     zeroeds.Append(dr[7].ToString());
 
@@ -91,14 +84,7 @@ namespace DevPratico
 
                     sixPages.Append(dr[0].ToString() + "; ");
 
-                    StringBuilder endereco = new StringBuilder();
-                    endereco.Append(dr[1].ToString());
-                    endereco.Append(dr[2].ToString() + " ");
-                    endereco.Append(dr[3].ToString() + " ");
-                    endereco.Append(dr[4].ToString() + " ");
-                    endereco.Append(dr[5].ToString() + "; ");
-
-                    sixPages.Append(endereco);
+                    sixPages.Append(Formatter.AddressContac(dr));
                     sixPages.Append(dr[6].ToString() + "; ");
                     sixPages.Append(dr[7].ToString());
                 }
