@@ -59,45 +59,8 @@ namespace DevPratico
 
             //- Agrupe os arquivos de saída por números de páginas de faturas
 
-            //registros com ate 6 paginas
-
-            StringBuilder sixPages = new StringBuilder();
-
-            sixPages = Formatter.HeaderCreator();
-            sixPages.AppendLine();
-
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                var dr = dataTable.Rows[i];
-                var strNum = dr["NumeroPaginas"].ToString();
-                int pages = int.Parse(strNum.Trim());
-
-                if (pages <= 6)
-                {
-                    if (pages % 2 == 1)
-                    {
-                        pages += 1;
-                    }
-
-                    dr["NumeroPaginas"] = pages;
-
-
-                    sixPages.Append(dr[0].ToString() + "; ");
-
-                    sixPages.Append(Formatter.AddressContac(dr));
-                    sixPages.Append(dr[6].ToString() + "; ");
-                    sixPages.Append(dr[7].ToString());
-                }
-
-                sixPages.AppendLine();
-            }
-
-            using (StreamWriter writer = new StreamWriter("AteSeisPaginas.csv"))
-            {
-                writer.Write(sixPages.ToString());
-            }
-
-            //registros com ate 12 paginas
+            FileGenerator generator = new FileGenerator();
+            generator.ByNumberOfPages(dataTable);
         }
     }
 }

@@ -6,8 +6,6 @@ namespace DevPratico
 {
     public static class Handler
     {
-        
-
         //Este metodo espera um path de arquivo que sera 
         //convertido para um DataTable e retornado
         public static DataTable FileToDataTable(string path)
