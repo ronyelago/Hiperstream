@@ -19,7 +19,7 @@ namespace DevPratico
             {
                 var dr = dataTable.Rows[index];
 
-                if (!Handler.CepValidate(dr["CEP"].ToString()))
+                if (!AddressHandler.CepValidate(dr["CEP"].ToString()))
                 {
                     dr.Delete();
                     index -= 1;
